@@ -66,13 +66,13 @@ int main(){
         system("CLS");
     } while(!userWin && !compWin && !noWin);
 
-    if(userWin == true){
+    if(userWin){
         cout << "userWin ";
     }
-    if(compWin == true){
+    if(compWin){
         cout << "compWin ";
     }
-    if(noWin == true){
+    if(noWin){
         cout << "noWin ";
     }
 
