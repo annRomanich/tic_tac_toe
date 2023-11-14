@@ -11,22 +11,19 @@ bool userWin = false, compWin = false, noWin = false;
 int x, y;
 int h = 0;
 
-bool hasWon(char symbol){
-    if( // по строкам
-    (field[0][0] == symbol && field[0][1] == symbol && field[0][2] == symbol) ||  
-    (field[1][0] == symbol && field[1][1] == symbol && field[1][2] == symbol) ||
-    (field[2][0] == symbol && field[2][1] == symbol && field[2][2] == symbol) ||
-    // по столбцам
-    (field[0][0] == symbol && field[1][0] == symbol && field[2][0] == symbol) ||  
-    (field[0][1] == symbol && field[1][1] == symbol && field[2][1] == symbol) ||
-    (field[0][2] == symbol && field[2][1] == symbol && field[2][2] == symbol) ||
-    // по диагоналям
-    (field[0][0] == symbol && field[1][1] == symbol && field[2][2] == symbol) ||
-    (field[0][2] == symbol && field[1][1] == symbol && field[2][0] == symbol) 
-    ) {
-        return true;
-    }
-    return false;
+bool hasWon(char c){
+            // по строкам
+    return  (field[0][0] == c && field[0][1] == c && field[0][2] == c) ||  
+            (field[1][0] == c && field[1][1] == c && field[1][2] == c) ||
+            (field[2][0] == c && field[2][1] == c && field[2][2] == c) ||
+             // по столбцам
+            (field[0][0] == c && field[1][0] == c && field[2][0] == c) ||  
+            (field[0][1] == c && field[1][1] == c && field[2][1] == c) ||
+            (field[0][2] == c && field[2][1] == c && field[2][2] == c) ||
+            // по диагоналям
+            (field[0][0] == c && field[1][1] == c && field[2][2] == c) ||
+            (field[0][2] == c && field[1][1] == c && field[2][0] == c) ;
+    
 }
 
 int main(){
@@ -70,13 +67,13 @@ int main(){
     } while(!userWin && !compWin && !noWin);
 
     if(userWin == true){
-        cout << "userWin";
+        cout << "userWin ";
     }
     if(compWin == true){
-        cout << "compWin";
+        cout << "compWin ";
     }
     if(noWin == true){
-        cout << "noWin";
+        cout << "noWin ";
     }
 
     return 0;
